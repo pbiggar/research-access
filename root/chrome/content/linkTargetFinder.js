@@ -15,21 +15,49 @@ var raExtension =
 			appcontent.addEventListener("DOMContentLoaded", raExtension.onPageLoad, true);
 	},
 
+
 	onPageLoad: function (aEvent)
 	{
-		var title = document.title;
-		var allLinks = content.document.getElementsByTagName("a");
+		// Check we're in the right page
+		var doc = aEvent.originalTarget;
 
+
+		// Get title
+		var title = doc.title;
+
+		// Get authors
+		var authors = [];
+/*		var allDivs = content.document.getElementsByTagName("div");
+		for (var i in allDivs)
+		{
+			div = allDivs[i];
+			if (div.className == "Authors)
+			{
+				allAuthorLinks = div.getElementsByTagName("a");
+				for (var i in allAuthorLinks)
+				{
+					var authorLink = allAuthorLinks[i];
+				}
+
+				break;
+			}
+		}
+*/		
+
+		// Replace link
+		var allLinks = doc.getElementsByTagName("a");
 		for (var i in allLinks)
 		{
-			elm = allLinks[i];
-			if (elm.getAttribute("name") == "FullText")
+			anchor = allLinks[i];
+			if (anchor.name == "FullText")
 			{
-				elm.setAttribute("href", raExtension.getPDFLink ("An experimental study of sorting and branch prediction", ["Paul Biggar", "Nicholas Nash", "Kevin Williams", "David Gregg"]));
+				anchor.href = raExtension.getPDFLink (title, authors);
+				anchor.target = "";
 				break;
 			}
 		}
 	},
+
 
 	getPDFLink: function (title, authors)
 	{
@@ -40,7 +68,7 @@ var raExtension =
 //		if (req.status == 0)
 //			dump(req.responseText);
 
-		return 'http://scholar.google.com/scholar?q="' + title.replace(" ", "+") + '"&btnG=Search';
+		return 'http://scholar.google.com/scholar?q="' + title.replace(" ", "+", "g") + '"&btnG=Search';
 	}
 }
 
