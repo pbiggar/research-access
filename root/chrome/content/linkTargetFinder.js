@@ -1,9 +1,3 @@
-  // 1. var req = new XMLHttpRequest();  
-//	   2. req.open('GET', 'file:///home/user/file.json', false);   
-//		   3. req.send(null);  
-//			   4. if(req.status == 0)  
-//	   5.   dump(req.responseText);  
-
 window.addEventListener("load", function() { raExtension.init(); }, false);
 
 var raExtension =
@@ -21,20 +15,32 @@ var raExtension =
 			appcontent.addEventListener("DOMContentLoaded", raExtension.onPageLoad, true);
 	},
 
-	onPageLoad: function(aEvent)
+	onPageLoad: function (aEvent)
 	{
 		var title = document.title;
 		var allLinks = content.document.getElementsByTagName("a");
 
-		for (var i=0, il=allLinks.length; i<il; i++)
+		for (var i in allLinks)
 		{
 			elm = allLinks[i];
 			if (elm.getAttribute("name") == "FullText")
 			{
-				elm.setAttribute("href", "http://google.com?q=");
+				elm.setAttribute("href", raExtension.getPDFLink ("An experimental study of sorting and branch prediction", ["Paul Biggar", "Nicholas Nash", "Kevin Williams", "David Gregg"]));
+				break;
 			}
-			break;
 		}
+	},
+
+	getPDFLink: function (title, authors)
+	{
+		// Just go with the title for now
+//		var req = new XMLHttpRequest();  
+//		req.open('GET', 'http://scholar.google.com/?q=' + title, false);   
+//		req.send(null);  
+//		if (req.status == 0)
+//			dump(req.responseText);
+
+		return 'http://scholar.google.com/scholar?q=%22An+experimental+study+of+sorting+and+branch+prediction%22&btnG=Search';
 	}
 }
 
