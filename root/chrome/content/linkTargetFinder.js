@@ -40,7 +40,7 @@ var raExtension =
 //		if (req.status == 0)
 //			dump(req.responseText);
 
-		return 'http://scholar.google.com/scholar?q=%22An+experimental+study+of+sorting+and+branch+prediction%22&btnG=Search';
+		return 'http://scholar.google.com/scholar?q="' + title.replace(" ", "+") + '"&btnG=Search';
 	}
 }
 
