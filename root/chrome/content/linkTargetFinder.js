@@ -18,8 +18,11 @@ var raExtension =
 
 	onPageLoad: function (aEvent)
 	{
-		// Check we're in the right page
 		var doc = aEvent.originalTarget;
+
+		// Check we're in the right page
+		if (doc.location.href.match ("http://portal\.acm\.org/citation\.cfm\\?id=.*") != doc.location.href)
+			return;
 
 
 		// Get title
