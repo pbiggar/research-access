@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://linktargetfinder/skin/skin.css" type="text/css"?> 
-<!DOCTYPE linktargetfinder SYSTEM "chrome://linktargetfinder/locale/translations.dtd">
+<?xml-stylesheet href="chrome://researchaccess/skin/skin.css" type="text/css"?> 
+<!DOCTYPE researchaccess SYSTEM "chrome://linktargetfinder/locale/translations.dtd">
 <overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-		<script src="linkTargetFinder.js" />
+		<script src="researchAccess.js" />
 </overlay>

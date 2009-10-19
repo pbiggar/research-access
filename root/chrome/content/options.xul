@@ -7,7 +7,7 @@
  
 	<prefpane label="Link Target Finder Preferences">
 		<preferences>
-			<preference id="link-target-finder-autorun" name="extensions.linktargetfinder.autorun" type="bool"/>
+			<preference id="link-target-finder-autorun" name="extensions.researchaccess.autorun" type="bool"/>
 		</preferences>
 		
 		<groupbox>
