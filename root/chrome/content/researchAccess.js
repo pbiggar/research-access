@@ -1,6 +1,9 @@
-window.addEventListener("load", function() { raExtension.init(); }, false);
+if(!com) var com = {};
+if(!com.paulbiggar) com.paulbiggar = {};
+if(!com.paulbiggar.researchAccess) com.paulbiggar.researchAccess = {};
 
-var raExtension =
+
+com.paulbiggar.researchAccess =
 {
 	init: function()
 	{
@@ -12,7 +15,7 @@ var raExtension =
 		 */
 		var appcontent = document.getElementById("appcontent");   // browser
 		if (appcontent)
-			appcontent.addEventListener("DOMContentLoaded", raExtension.onPageLoad, true);
+			appcontent.addEventListener("DOMContentLoaded", com.paulbiggar.researchAccess.onPageLoad, true);
 	},
 
 
@@ -54,7 +57,7 @@ var raExtension =
 			anchor = allLinks[i];
 			if (anchor.name == "FullText")
 			{
-				anchor.href = raExtension.getPDFLink (title, authors);
+				anchor.href = com.paulbiggar.researchAccess.getPDFLink (title, authors);
 				anchor.target = "";
 				break;
 			}
@@ -75,3 +78,4 @@ var raExtension =
 	}
 }
 
+window.addEventListener("load", function() { com.paulbiggar.researchAccess.init(); }, false);
