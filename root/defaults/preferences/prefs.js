@@ -1,1 +1,0 @@
-pref("extensions.researchaccess.autorun", false);
