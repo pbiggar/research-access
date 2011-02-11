@@ -7,7 +7,6 @@ com.paulbiggar.researchAccess =
 {
 	init: function()
 	{
-
 		/*
 		 * Running code after the page has loaded isn't trivial for some reason.
 		 * Code from:
