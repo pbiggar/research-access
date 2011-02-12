@@ -1,8 +1,0 @@
-content     researchaccess    chrome/content/
-content     researchaccess    chrome/content/ contentaccessible=yes
-overlay chrome://browser/content/browser.xul chrome://researchaccess/content/browser.xul
-
-locale	researchaccess	en-US	locale/en-US/
-
-skin	researchaccess	classic/1.0	skin/
-style	chrome://global/content/customizeToolbar.xul	chrome://researchaccess/skin/skin.css
